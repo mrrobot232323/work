@@ -10,9 +10,9 @@
 .hero-background {
     position: absolute;
     inset: 0;
-    background-position: center;
-    background-size: cover;
-    background-image: url('https://cdn.dribbble.com/userupload/22330794/file/original-7e809b836a318058ee03f73d7811ed3e.gif');
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-content {
@@ -33,11 +33,22 @@
     line-height: 1.05;
     font-weight: 800;
     font-family: 'Google Sans', sans-serif;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    color: white;
+    font-size: 20px;
+    margin-top: 1.5rem;
+    max-width: 600px;
+    font-weight: 500;
+    font-family: 'Google Sans', sans-serif;
 }
 
 @media (min-width: 768px) {
     .hero-title {
         font-size: 90px;
+    }
+    .hero-subtitle {
+        font-size: 24px;
     }
 }

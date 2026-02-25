@@ -129,13 +129,13 @@ export default function Navbar() {
     return (
         <nav ref={navRef} className="navbar">
             <Link href="/" className="navbar-logo">
-                
+
                 Orbee
             </Link>
 
             <div className="navbar-links">
                 {renderLink("Features", "#features", 0)}
-                {renderLink("Pricing", "#pricing", 1)}
+                {renderLink("Download", "#download", 1)}
                 {renderLink("About", "#about", 2)}
             </div>
 

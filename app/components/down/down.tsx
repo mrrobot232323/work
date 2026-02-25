@@ -102,22 +102,22 @@ export default function Down() {
     };
 
     return (
-        <div ref={sectionRef} className="down-section shadow-xl">
+        <div id="about" ref={sectionRef} className="down-section shadow-xl">
             <div ref={containerRef} className="down-content">
                 <h2 className="down-subheading">
-                    <SplitTextLetters text="WHY REASONAL?" />
+                    <SplitTextLetters text="WHY ORBEE?" />
                 </h2>
 
                 <p className="down-text-block">
-                    <SplitTextLetters text="As discerning adults, we're expected to" />
-                    <SplitTextLetters text="think clearly, evaluate sources, resist" />
-                    <SplitTextLetters text="manipulation, and make good decisions." />
+                    <SplitTextLetters text="Orbee is a travel based dating" />
+                    <SplitTextLetters text="app where your preferences are" />
+                    <SplitTextLetters text="made on dream destinations." />
                 </p>
 
                 <p className="down-text-block">
-                    <SplitTextLetters text="Oddly, though, we're rarely taught" />
-                    <SplitTextLetters text="how to do any of this systematically," />
-                    <SplitTextLetters text="the way we're taught reading or math." />
+                    <SplitTextLetters text="Connect over shared experiences," />
+                    <SplitTextLetters text="and find matches who want to" />
+                    <SplitTextLetters text="explore the world with you." />
                 </p>
 
                 <div className="down-icon">
@@ -127,31 +127,31 @@ export default function Down() {
                 </div>
 
                 <p className="down-text-block">
-                    <SplitTextLetters text="With Reasonal, we're changing that." />
+                    <SplitTextLetters text="With Orbee, travel meets love." />
                 </p>
             </div>
 
             {/* Scattered Images - High quality portrait placeholders */}
             <div ref={(el) => setRef(el, 0)} className="down-image-left-top">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&h=800&fit=crop" alt="Portrait 1" />
+                <img src="https://reasonal.co/assets/whysection/thinker.webp" alt="Portrait 1" />
             </div>
             <div ref={(el) => setRef(el, 1)} className="down-image-left-mid">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&h=800&fit=crop" alt="Portrait 2" />
+                <img src="https://reasonal.co/assets/whysection/calc.webp" alt="Portrait 2" />
             </div>
             <div ref={(el) => setRef(el, 2)} className="down-image-left-bottom">
-                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=600&h=800&fit=crop" alt="Portrait 3" />
+                <img src="https://reasonal.co/assets/whysection/pencilhand.webp" alt="Portrait 3" />
             </div>
             <div ref={(el) => setRef(el, 3)} className="down-image-right-top">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&h=800&fit=crop" alt="Portrait 4" />
+                <img src="https://reasonal.co/assets/whysection/tape.webp" alt="Portrait 4" />
             </div>
             <div ref={(el) => setRef(el, 4)} className="down-image-right-mid">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&h=800&fit=crop" alt="Portrait 5" />
+                <img src="https://reasonal.co/assets/whysection/mic.webp" alt="Portrait 5" />
             </div>
             <div ref={(el) => setRef(el, 5)} className="down-image-right-bottom">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&h=800&fit=crop" alt="Portrait 6" />
+                <img src="https://reasonal.co/assets/whysection/pencilhand.webp" alt="Portrait 6" />
             </div>
             <div ref={(el) => setRef(el, 6)} className="down-image-center-bottom">
-                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&h=800&fit=crop" alt="Portrait 7" />
+                <img src="https://reasonal.co/assets/whysection/scales.webp" alt="Portrait 7" />
             </div>
         </div>
     );

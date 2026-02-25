@@ -1,6 +1,6 @@
 .down-section {
   /* Light peach background color matching the video */
-  background-color: #FCE1D4; 
+  background-color: #f4b293ff; 
   min-height: 800px;
   width: 100%;
   max-width: 1400px;
@@ -56,7 +56,7 @@
   position: absolute;
   top: 15%;
   left: 8%;
-  width: 140px;
+  width: 200px;
   pointer-events: none;
   transform: rotate(-8deg);
   z-index: 5;
@@ -67,7 +67,7 @@
   top: 45%;
   left: 10%;
   transform: translateY(-50%) rotate(4deg);
-  width: 150px;
+  width: 180px;
   pointer-events: none;
   z-index: 5;
 }
@@ -76,7 +76,7 @@
   position: absolute;
   bottom: 15%;
   left: 8%;
-  width: 130px;
+  width: 160px;
   pointer-events: none;
   transform: rotate(-12deg);
   z-index: 5;
@@ -86,7 +86,7 @@
   position: absolute;
   top: 12%;
   right: 8%;
-  width: 145px;
+  width: 175px;
   pointer-events: none;
   transform: rotate(10deg);
   z-index: 5;
@@ -97,7 +97,7 @@
   top: 50%;
   right: 10%;
   transform: translateY(-50%) rotate(-6deg);
-  width: 135px;
+  width: 165px;
   pointer-events: none;
   z-index: 5;
 }
@@ -106,7 +106,7 @@
   position: absolute;
   bottom: 12%;
   right: 8%;
-  width: 140px;
+  width: 170px;
   pointer-events: none;
   transform: rotate(8deg);
   z-index: 5;
@@ -117,7 +117,7 @@
   bottom: 8%;
   left: 50%;
   transform: translateX(-50%) rotate(-3deg);
-  width: 120px;
+  width: 150px;
   pointer-events: none;
   z-index: 5;
 }
@@ -133,8 +133,11 @@
   height: auto;
   display: block;
   border-radius: 12px;
+  border: 3px solid #FFF;
+  box-sizing: border-box;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   background-color: #fff; /* Fallback */
+  filter: grayscale(100%);
 }
 
 @media (max-width: 1024px) {

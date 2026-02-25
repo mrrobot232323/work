@@ -1,22 +1,15 @@
 import React from 'react';
 import './blur.css';
+import FallingText from '../fallingtext/FallingText';
 
 export default function Blur() {
     return (
-        <div className="blur-container">
+        <div id="features" className="blur-container">
             {/* Left Card */}
             <div className="blur-card blur-card-left">
-                <h3 className="blur-heading">The antidote to brain rot</h3>
-                <p className="blur-text">
-                    Reasonal brings ideas that actively engage your
-                    brain, not pre-digested material for passive
-                    consumption.
-                </p>
-
                 <div className="blur-phone-container">
-                    {/* Placeholder for the phone mockup image */}
                     <img
-                        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=600&h=1200&fit=crop"
+                        src="https://play-lh.googleusercontent.com/9_i1E4C_TFDybWIUaLmcQI6I4TdilZ1l7UVkhLyO4W5aQP85ATUqFiqyhR2UIycSpraBeB283bB7EjYULem6K6g=w5120-h2880-rw"
                         alt="Mobile app interface"
                         className="blur-phone-image"
                     />
@@ -25,20 +18,22 @@ export default function Blur() {
 
             {/* Right Card */}
             <div className="blur-card blur-card-right">
-                <h3 className="blur-heading">Fundamental skills you'll use every day</h3>
+                <h3 className="blur-heading">Connect through shared adventures</h3>
                 <p className="blur-text">
-                    Critical thinking requires a collection of specific skills you apply in specific
-                    situations. Nobody is born good at all of this, but all of it can be learned. That's
-                    what Reasonal is for.
+                    Finding the right partner is about shared passions and experiences.
+                    Whether you love mountain hiking, exploring culinary scenes, or backpacking across Europe,
+                    Orbee helps you find someone who matches your vibe.
                 </p>
 
-                <div className="blur-pills-container">
-                    <div className="blur-pill">Data Analysis</div>
-                    <div className="blur-pill">Argument Evaluation</div>
-                    <div className="blur-pill">Problem Solving</div>
-                    <div className="blur-pill">Media Literacy</div>
-                    <div className="blur-pill">Decision Making</div>
-                    <div className="blur-pill">Logical Reasoning</div>
+                <div style={{ flex: 1, position: 'relative', marginTop: '1rem', minHeight: '300px' }}>
+                    <FallingText
+                        text="Destinations Match Culture Explore Getaway Spark Dates Romance Vibe Adventures Travel Connection Passions Love"
+                        trigger="scroll"
+                        backgroundColor="transparent"
+                        wireframes={false}
+                        gravity={0.5}
+                        mouseConstraintStiffness={0.2}
+                    />
                 </div>
             </div>
         </div>

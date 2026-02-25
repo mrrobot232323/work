@@ -1,11 +1,12 @@
 .floating-pill-section {
     width: 100%;
     max-width: 1400px;
-    margin: 40px auto;
+    margin: -10px auto 40px; /* moved slightly above */
     border-radius: 40px;
     overflow: hidden;
-    background-color: #F8F1E5; /* Light beige/cream background */
+    background-color: #e8aea3ff; /* Light beige/cream background */
     position: relative;
+    z-index: 10;
 }
 
 .floating-pill-container {
@@ -57,7 +58,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: white;
+    background: #FF6B00; /* Vibrant orange background */
     padding: 12px 24px;
     border-radius: 50px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -77,7 +78,7 @@
     font-family: 'Google Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #555;
+    color: #000; /* Black text */
 }
 
 @media (max-width: 768px) {
