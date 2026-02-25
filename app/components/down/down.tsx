@@ -37,50 +37,42 @@ export default function Down() {
         const ctx = gsap.context(() => {
             const textBlocks = gsap.utils.toArray('.down-text-block, .down-subheading');
 
-            // Granular Letter Reveal
+            // Fixed-Position Scroll-Synced Reveal (Scrub)
+            const mainTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 90%",   // Start when section is comfortably in view
+                    end: "bottom 85%", // Finish before it leaves
+                    scrub: 1,         // Smooth sync
+                }
+            });
+
+            // Add all blocks to a single continuous timeline for a sequential reveal feel
             textBlocks.forEach((block: any) => {
                 const chars = block.querySelectorAll('.char');
 
-                gsap.from(chars, {
-                    opacity: 0,
-                    y: 20,
-                    x: 10,
-                    filter: "blur(4px)",
-                    duration: 0.8,
-                    stagger: 0.015, // Ultra-fast stagger for letters
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: block,
-                        start: "top 90%",
-                        toggleActions: "play none none reverse"
-                    }
-                });
+                mainTl.fromTo(chars,
+                    {
+                        opacity: 0.15, // Faint initial state
+                        filter: "blur(4px)",
+                    },
+                    {
+                        opacity: 1,
+                        filter: "blur(0px)",
+                        stagger: 0.05,
+                        ease: "none",
+                    },
+                    "+=0.1" // Slight gap between blocks
+                );
             });
 
-            // Reveal the icon separately
-            gsap.fromTo('.down-icon',
-                { opacity: 0, scale: 0.8 },
-                {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1,
-                    ease: "back.out(1.7)",
-                    scrollTrigger: {
-                        trigger: '.down-icon',
-                        start: "top 90%",
-                        toggleActions: "play none none reverse"
-                    }
-                }
-            );
-
-            // Fast Outward Image Movement on Scroll
+            // Fast Outward Image Movement on Scroll (Independent scrub for speed feel)
             imagesRef.current.forEach((img) => {
                 if (!img) return;
 
                 let xMove = 0;
                 let yMove = 0;
 
-                // Significantly increased movement values for "speed"
                 if (img.classList.contains('down-image-left-top')) { xMove = -150; yMove = -100; }
                 else if (img.classList.contains('down-image-left-mid')) { xMove = -200; yMove = 0; }
                 else if (img.classList.contains('down-image-left-bottom')) { xMove = -150; yMove = 100; }
@@ -96,7 +88,7 @@ export default function Down() {
                         trigger: sectionRef.current,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: 1, // Lower scrub for more responsive/faster feeling speed
+                        scrub: 1,
                     }
                 });
             });
