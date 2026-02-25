@@ -1,123 +1,150 @@
 .navbar {
-  position: absolute;
-  top: 1.9rem;
+  position: fixed; /* Changed from absolute for better UX */
+  top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 3rem);
-  max-width: 1200px;
-  z-index: 50;
-  background-color: rgba(255, 255, 255, 0.85);
+  width: calc(100% - 2rem);
+  max-width: 1100px;
+  z-index: 100;
+  background: #000; /* Solid Black */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 0.5rem 0.5rem 0.5rem 1.8rem;
   border-radius: 9999px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
   box-sizing: border-box;
-  border: 2px solid #020202ff;
   font-family: 'Google Sans', sans-serif;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-@media (min-width: 768px) {
-  .navbar {
-    width: calc(100% - 4rem);
-    padding: 0.625rem 0.625rem 0.625rem 2rem;
-  }
+.navbar:hover {
+  background: #000; /* Solid Black on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-logo {
   font-family: 'Roboto Slab', serif;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: -0.025em;
-  color: #111;
+  color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   flex: 1;
 }
 
-@media (min-width: 768px) {
-  .navbar-logo {
-      font-size: 1.5rem;
-  }
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: #FF6B00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.4);
 }
 
 .navbar-links {
-  display: none;
-  gap: 2rem;
+  display: flex;
+  gap: 2.5rem;
   align-items: center;
-  font-weight: 600;
   flex: 1;
   justify-content: center;
 }
 
-@media (min-width: 768px) {
-  .navbar-links {
-    display: flex;
-  }
+@media (max-width: 768px) {
+  .navbar-links { display: none; }
 }
 
+/* Character Roll Animation */
 .navbar-link {
-  font-family: 'Google Sans', sans-serif;
-  color: #333;
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
-  font-size: 15px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  overflow: hidden;
+  height: 24px;
+  display: block;
+  position: relative;
 }
 
-.navbar-link:hover {
-  color: #000;
+.link-text {
+  display: flex;
 }
+
+.char-roll {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  transform-style: preserve-3d;
+}
+
+.char-roll::after {
+  content: attr(data-char);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #FF6B00; /* Orange on hover */
+  text-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
+}
+
+.navbar-link:hover .char-roll {
+  transform: translateY(-100%);
+}
+
+/* Staggered delay for the roll */
+.char-roll:nth-child(1) { transition-delay: 0.02s; }
+.char-roll:nth-child(2) { transition-delay: 0.04s; }
+.char-roll:nth-child(3) { transition-delay: 0.06s; }
+.char-roll:nth-child(4) { transition-delay: 0.08s; }
+.char-roll:nth-child(5) { transition-delay: 0.1s; }
+.char-roll:nth-child(6) { transition-delay: 0.12s; }
+.char-roll:nth-child(7) { transition-delay: 0.14s; }
+.char-roll:nth-child(8) { transition-delay: 0.16s; }
 
 .navbar-actions {
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
   flex: 1;
   justify-content: flex-end;
 }
 
-.navbar-login {
-  font-family: 'Google Sans', sans-serif;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  font-size: 15px;
-  color: #1f2937;
+.navbar-signup {
+  position: relative;
+  background: #fff;
+  color: #000;
+  padding: 0.8rem 2.2rem;
   border-radius: 9999px;
   text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
-}
-
-@media (min-width: 640px) {
-  .navbar-login {
-    display: flex;
-  }
-}
-
-.navbar-login:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.navbar-signup {
-  font-family: 'Google Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
-  font-weight: 600;
-  font-size: 15px;
-  color: #fff;
-  background-color: #1a1a1a;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  z-index: 1;
 }
 
-.navbar-signup:hover {
-  background-color: #000;
-  transform: scale(1.02);
+.signup-text {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.plasma-glow {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.6) 0%, rgba(244, 63, 94, 0.4) 30%, transparent 70%);
+  filter: blur(20px);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-signup:hover .plasma-glow {
+  opacity: 1;
 }
