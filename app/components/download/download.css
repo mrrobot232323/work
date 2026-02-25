@@ -1,0 +1,94 @@
+.download-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 40px;
+    background-color: #121211; /* Warm dark off-black from the screenshot */
+    overflow: hidden;
+}
+
+.download-container {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    font-family: 'Archivo', sans-serif;
+}
+
+@media (min-width: 1024px) {
+    .download-container {
+        padding: 8rem 5rem;
+        min-height: 450px;
+    }
+}
+
+.download-pill {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px; /* Slightly squared pill like image */
+    padding: 0.4rem 1.2rem;
+    color: #e5e5e5;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.25em; /* Extremely wide tracking */
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-family: 'Google Sans', sans-serif;
+    cursor: default;
+}
+
+.download-platforms {
+    color: #f4f0ed; /* Off-white text */
+    font-family: 'Roboto Slab', serif; /* Serif font resembling screenshot */
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 400; /* Regular weight */
+    max-width: 1000px;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+    .download-platforms {
+        font-size: 2.5rem;
+        line-height: 1.6;
+    }
+}
+
+.download-link {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.download-link:hover {
+    opacity: 0.7;
+}
+
+.red-dot {
+    color: #cb3d2c; /* The exact muted red tone from the screenshot */
+    margin: 0 0.5rem;
+    font-size: 0.7em;
+    vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+    .red-dot {
+        margin: 0 0.7rem;
+    }
+}
+
+/* Optional: hide the <br> and desktop-started red dot on very small mobile screens so it wraps smoothly instead */
+@media (max-width: 767px) {
+    .desktop-break {
+        display: none;
+    }
+    .desktop-dot {
+        display: none;
+    }
+    .red-dot {
+        margin: 0 0.3rem;
+    }
+}

@@ -1,0 +1,130 @@
+.down-section {
+  /* Light peach background color matching the video */
+  background-color: #FCE1D4; 
+  min-height: 800px;
+  width: 100%;
+  max-width: 1400px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'Google Sans', sans-serif;
+  padding: 60px 20px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.down-content {
+  text-align: center;
+  max-width: 900px;
+  position: relative;
+  z-index: 10;
+}
+
+.down-subheading {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.down-text-block {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 38px;
+  line-height: 1.3;
+  color: #1a1a1a;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.down-icon {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.down-image-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  pointer-events: none;
+}
+
+.down-image-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.down-image-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  pointer-events: none;
+}
+
+.down-image-right img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.down-image-left-top {
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 120px;
+  pointer-events: none;
+  transform: rotate(-10deg);
+}
+.down-image-left-top img { width: 100%; height: auto; display: block; }
+
+.down-image-left-mid {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%) rotate(5deg);
+  width: 140px;
+  pointer-events: none;
+}
+.down-image-left-mid img { width: 100%; height: auto; display: block; }
+
+.down-image-right-top {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 130px;
+  pointer-events: none;
+  transform: rotate(15deg);
+}
+.down-image-right-top img { width: 100%; height: auto; display: block; }
+
+.down-image-right-mid {
+  position: absolute;
+  top: 45%;
+  right: 90px;
+  transform: translateY(-50%) rotate(-8deg);
+  width: 110px;
+  pointer-events: none;
+}
+.down-image-right-mid img { width: 100%; height: auto; display: block; }
+
+@media (max-width: 768px) {
+  .down-text-block {
+    font-size: 24px;
+  }
+  
+  .down-text-block br {
+    display: none;
+  }
+  
+  .down-image-left {
+    width: 100px;
+  }
+}
