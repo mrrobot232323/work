@@ -3,7 +3,10 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "./navbar.css";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Navbar() {
     const navRef = useRef<HTMLDivElement>(null);
@@ -11,6 +14,23 @@ export default function Navbar() {
     const buttonRef = useRef<HTMLAnchorElement>(null);
     const buttonContentRef = useRef<HTMLSpanElement>(null);
     const plasmaRef = useRef<HTMLDivElement>(null);
+
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                gsap.to(window, {
+                    scrollTo: {
+                        y: target,
+                        offsetY: 20
+                    },
+                    duration: 1.5,
+                    ease: "power4.inOut"
+                });
+            }
+        }
+    };
 
     useEffect(() => {
         const links = linksRef.current;
@@ -113,6 +133,7 @@ export default function Navbar() {
         <Link
             key={text}
             href={href}
+            onClick={(e) => scrollToSection(e, href)}
             ref={(el) => { linksRef.current[index] = el; }}
             className="navbar-link"
         >
@@ -140,7 +161,12 @@ export default function Navbar() {
             </div>
 
             <div className="navbar-actions">
-                <Link href="/signup" ref={buttonRef} className="navbar-signup">
+                <Link
+                    href="#download"
+                    onClick={(e) => scrollToSection(e, "#download")}
+                    ref={buttonRef}
+                    className="navbar-signup"
+                >
                     <div ref={plasmaRef} className="plasma-glow"></div>
                     <span ref={buttonContentRef} className="signup-text">
                         Get Started
