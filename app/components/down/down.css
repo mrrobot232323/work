@@ -158,10 +158,25 @@
     display: none;
   }
   
+  /* Show and cluster images in center on mobile */
   .down-image-left-top, .down-image-right-top,
   .down-image-left-mid, .down-image-right-mid,
   .down-image-left-bottom, .down-image-right-bottom,
   .down-image-center-bottom {
-    display: none; /* Hide images on small mobile to avoid clutter */
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    z-index: 15; /* Above content which is 10 */
   }
+
+  /* Variations for center cluster */
+  .down-image-left-top { transform: translate(-60%, -60%) rotate(-5deg); }
+  .down-image-right-top { transform: translate(-40%, -65%) rotate(8deg); }
+  .down-image-left-mid { transform: translate(-70%, -45%) rotate(4deg); }
+  .down-image-right-mid { transform: translate(-30%, -50%) rotate(-6deg); }
+  .down-image-left-bottom { transform: translate(-55%, -35%) rotate(-10deg); }
+  .down-image-right-bottom { transform: translate(-45%, -40%) rotate(12deg); }
+  .down-image-center-bottom { transform: translate(-50%, -55%) rotate(-3deg); }
 }
