@@ -3,10 +3,30 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import './footer.css';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Footer() {
     const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                gsap.to(window, {
+                    scrollTo: {
+                        y: target,
+                        offsetY: 20
+                    },
+                    duration: 1.5,
+                    ease: "power4.inOut"
+                });
+            }
+        }
+    };
 
     useEffect(() => {
         const links = linksRef.current.filter(Boolean);
@@ -69,6 +89,7 @@ export default function Footer() {
             <Link
                 key={text}
                 href={href}
+                onClick={(e) => scrollToSection(e, href)}
                 ref={(el) => { linksRef.current[index] = el; }}
                 className="footer-link-animated"
             >
@@ -82,8 +103,14 @@ export default function Footer() {
             <div className="footer-top">
                 {/* Left Side: Brand CTA */}
                 <div className="footer-brand">
-                    <h2 className="footer-headline">Start your next<br /><em>great adventure.</em></h2>
-                    <a href="#download" className="footer-cta">Download Orbee</a>
+                    <h2 className="footer-headline">Start your next<br /><em>Great adventure.</em></h2>
+                    <a
+                        href="#download"
+                        className="footer-cta"
+                        onClick={(e) => scrollToSection(e, "#download")}
+                    >
+                        Download Orbee
+                    </a>
                 </div>
 
                 {/* Right Side: Links */}
