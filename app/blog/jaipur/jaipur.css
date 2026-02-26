@@ -1,0 +1,433 @@
+.blogpost-main-container {
+    padding-top: 6rem;
+}
+
+.blogpost-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 0rem;
+}
+
+/* Hero Section */
+.blogpost-hero {
+    margin-bottom: 3rem;
+}
+
+.blogpost-category {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: #fdf2e9;
+    color: #ff8c42;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-family: 'Archivo', sans-serif;
+}
+
+.blogpost-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.blogpost-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    padding: 1.25rem 0;
+    margin-bottom: 2.5rem;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    background: #ff8c42;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+}
+
+.author-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a1a1a;
+}
+
+.reading-time {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid #eaeaea;
+    background: #fff;
+    color: #444;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.share-button:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.blogpost-hero-image-wrapper {
+    width: 100%;
+    height: 450px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.blogpost-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Body Content */
+.blogpost-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.blogpost-body p {
+    margin-bottom: 1.5rem;
+}
+
+.blogpost-body .lead {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.blogpost-body h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.custom-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff8c42;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.custom-list-accent li::before {
+    color: #7c3aed;
+}
+
+.itinerary-card {
+    background: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-left: 4px solid #ff8c42;
+    padding: 1.5rem 2rem;
+    border-radius: 0 0.75rem 0.75rem 0;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.itinerary-card h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.itinerary-card ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    color: #444;
+}
+
+.itinerary-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.itinerary-budget {
+    display: inline-block;
+    background: #fdf2e9;
+    color: #ff8c42;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.itinerary-note {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0 !important;
+    margin-top: 1rem;
+}
+
+.highlight-box {
+    background: #f4f4f5;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.25rem;
+    color: #1a1a1a;
+}
+
+.conclusion-text {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fdf2e9;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+/* Author Block */
+.blogpost-author-block {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-radius: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.author-block-avatar {
+    width: 64px;
+    height: 64px;
+    background: #ff8c42;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    flex-shrink: 0;
+}
+
+.author-block-info h4 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.25rem;
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-block-info h4 span {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.8rem;
+    background: #f3e8ff;
+    color: #7c3aed;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.author-block-info p {
+    font-family: 'Archivo', sans-serif;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Comments */
+.blogpost-comments {
+    border-top: 1px solid #eaeaea;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.blogpost-comments h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.comment-placeholder {
+    padding: 2.5rem;
+    background: #f9fafb;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px dashed #d1d5db;
+}
+
+.comment-placeholder p {
+    font-family: 'Archivo', sans-serif;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.sign-in-btn {
+    background: #1a1a1a;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.sign-in-btn:hover {
+    background: #444;
+}
+
+/* CTA Section */
+.blogpost-cta-section {
+    background: linear-gradient(135deg, #151d1bff 0%, #2e2739ff 100%);
+    padding: 5rem 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.cta-content > p {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.25rem;
+    color: #ddd6fe;
+    margin-bottom: 3rem;
+}
+
+.cta-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 2rem;
+}
+
+.cta-box-text h3 {
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.cta-box-text p {
+    font-family: 'Archivo', sans-serif;
+    color: #e5e7eb;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.download-cta-btn {
+    background: #ff8c42;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+}
+
+.download-cta-btn:hover {
+    background: #f97316;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 140, 66, 0.4);
+}
+
+@media (max-width: 768px) {
+    .blogpost-title { font-size: 2.25rem; }
+    .blogpost-hero-image-wrapper { height: 300px; }
+    .blogpost-body h2 { font-size: 1.75rem; }
+
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .download-cta-btn {
+        width: 100%;
+    }
+
+    .blogpost-author-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

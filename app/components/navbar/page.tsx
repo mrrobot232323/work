@@ -134,16 +134,17 @@ export default function Navbar() {
             </Link>
 
             <div className="navbar-links">
-                {renderLink("Features", "#features", 0)}
-                {renderLink("Download", "#download", 1)}
-                {renderLink("About", "#about", 2)}
+                {renderLink("Features", "/#features", 0)}
+                {renderLink("Download", "/#download", 1)}
+                {renderLink("About", "/#about", 2)}
+                {renderLink("Blogs", "/blog", 3)}
             </div>
 
             <div className="navbar-actions">
-                <Link href="/signup" ref={buttonRef} className="navbar-signup">
+                <Link href="/contact" ref={buttonRef} className="navbar-signup">
                     <div ref={plasmaRef} className="plasma-glow"></div>
                     <span ref={buttonContentRef} className="signup-text">
-                        Get Started
+                        Contact us
                     </span>
                 </Link>
             </div>

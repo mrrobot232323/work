@@ -1,0 +1,245 @@
+.blog-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.blog-main-container {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  background-color: #cbbcf6ff;
+    border-radius: 40px;
+    margin-bottom: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.blog-header-section {
+    margin-bottom: 4rem;
+}
+
+.blog-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.blog-title span {
+    color: #ff8c42;
+}
+
+.blog-subtitle {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.03);
+    color: #000000;
+    font-family: 'Archivo', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #6b7280;
+}
+
+.search-input:focus {
+    border-color: #ff8c42;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.filters-container {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.filter-pill:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    color: #000000;
+}
+
+.filter-pill.active {
+    background-color: #ff8c42;
+    color: #ffffff;
+    border-color: #ff8c42;
+}
+
+/* Carousel Styles */
+.carousel-section-wrapper {
+    position: relative;
+    margin: 0 -3rem;
+}
+
+.carousel-wrapper {
+    overflow-x: auto;
+    padding: 1rem 3rem;
+    cursor: default;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory; /* Enforces strict one-by-one snapping */
+    scroll-behavior: smooth;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem; /* The gap we account for in JS */
+    padding-bottom: 1rem;
+    align-items: stretch;
+}
+
+/* Navigation Buttons - Upgraded to look like the reference image */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #ffffff; /* Solid background for higher contrast */
+    color: #2e2739;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.carousel-nav-btn:hover {
+    background: #ff8c42;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-nav-btn.left { left: 1rem; }
+.carousel-nav-btn.right { right: 1rem; }
+
+/* The Blog Card */
+.blog-card {
+    flex: 0 0 340px; /* Shows multiple cards at a time */
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    scroll-snap-align: center; /* Snaps perfectly to the center */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.4rem 1.2rem;
+    background: #f3e8ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #7c3aed;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+.card-excerpt {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .blog-title { font-size: 3rem; }
+    .blog-card { flex: 0 0 280px; }
+    .carousel-nav-btn {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-card { flex: 0 0 100%; }
+}
