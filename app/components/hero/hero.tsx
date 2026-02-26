@@ -1,39 +1,65 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import "./hero.css";
 
-export const slideUp = {
-    initial: {
-        y: "100%"
-    },
-    open: (i: number) => ({
-        y: "0%",
-        transition: { duration: 0.5, delay: 0.01 * i }
-    }),
-    closed: {
-        y: "100%",
-        transition: { duration: 0.5 }
-    }
-}
-
-export const opacity = {
-    initial: {
-        opacity: 0
-    },
-    open: {
-        opacity: 1,
-        transition: { duration: 0.5 }
-    },
-    closed: {
-        opacity: 0,
-        transition: { duration: 0.5 }
-    }
-}
-
 export default function Hero() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        if (!sectionRef.current) return;
+
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({
+                defaults: { ease: "power4.inOut" }
+            });
+
+            // Initial state: Tiny, blurred, and hidden
+            gsap.set(sectionRef.current, {
+                scale: 0,
+                opacity: 0,
+                filter: "blur(20px)",
+                transformOrigin: "center center"
+            });
+
+            gsap.set([titleRef.current, subtitleRef.current], {
+                opacity: 0,
+                y: 30
+            });
+
+            // The "Big Bang" Opening Animation
+            tl.to(sectionRef.current, {
+                scale: 1,
+                opacity: 1,
+                filter: "blur(0px)",
+                duration: 1.8,
+                ease: "expo.out"
+            })
+                // Reveal Title & Subtitle as it finishes expanding
+                .to(titleRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.8")
+                .to(subtitleRef.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out"
+                }, "-=0.6");
+
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="hero-section shadow-xl">
+        <section ref={sectionRef} className="hero-section shadow-xl">
             {/* VIDEO BACKGROUND */}
             <video
                 className="hero-background"
@@ -45,44 +71,13 @@ export default function Hero() {
             />
 
             {/* CONTENT */}
-            <div className="hero-content">
-                {/* TITLE */}
-                <h1 className="hero-title">
-                    <div style={{ overflow: "hidden" }}>
-                        <motion.div
-                            custom={10}
-                            variants={slideUp}
-                            initial="initial"
-                            animate="open"
-                        >
-                            Connect in the
-                        </motion.div>
-                    </div>
-                    <div style={{ overflow: "hidden" }}>
-                        <motion.div
-                            custom={20}
-                            variants={slideUp}
-                            initial="initial"
-                            animate="open"
-                            style={{ color: "white" }}
-                        >
-                            Moment
-                        </motion.div>
-                    </div>
+            <div ref={contentRef} className="hero-content">
+                <h1 ref={titleRef} className="hero-title">
+                    Connect in the<br />Moment
                 </h1>
-
-                {/* SUBTITLE */}
-                <div style={{ overflow: "hidden" }}>
-                    <motion.p
-                        className="hero-subtitle"
-                        custom={35}
-                        variants={slideUp}
-                        initial="initial"
-                        animate="open"
-                    >
-                        Experience the lighter side of social. Real-time connections, zero gravity.
-                    </motion.p>
-                </div>
+                <p ref={subtitleRef} className="hero-subtitle">
+                    Experience the lighter side of social. Real-time connections, zero gravity.
+                </p>
             </div>
         </section>
     );

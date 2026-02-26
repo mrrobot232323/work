@@ -5,6 +5,7 @@
     height: 755px;
     border-radius: 40px;
     overflow: hidden;
+    will-change: transform, opacity, filter;
 }
 
 .hero-background {
