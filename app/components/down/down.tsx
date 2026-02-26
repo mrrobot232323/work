@@ -66,30 +66,40 @@ export default function Down() {
                 );
             });
 
-            // Fast Outward Image Movement on Scroll (Independent scrub for speed feel)
-            imagesRef.current.forEach((img) => {
-                if (!img) return;
+            // Mobile vs Desktop spread logic
+            const mm = gsap.matchMedia();
 
-                let xMove = 0;
-                let yMove = 0;
+            mm.add({
+                isMobile: "(max-width: 768px)",
+                isDesktop: "(min-width: 769px)"
+            }, (context) => {
+                const { isMobile } = context.conditions as any;
 
-                if (img.classList.contains('down-image-left-top')) { xMove = -150; yMove = -100; }
-                else if (img.classList.contains('down-image-left-mid')) { xMove = -200; yMove = 0; }
-                else if (img.classList.contains('down-image-left-bottom')) { xMove = -150; yMove = 100; }
-                else if (img.classList.contains('down-image-right-top')) { xMove = 150; yMove = -100; }
-                else if (img.classList.contains('down-image-right-mid')) { xMove = 200; yMove = 0; }
-                else if (img.classList.contains('down-image-right-bottom')) { xMove = 150; yMove = 100; }
-                else if (img.classList.contains('down-image-center-bottom')) { xMove = 0; yMove = 150; }
+                imagesRef.current.forEach((img) => {
+                    if (!img) return;
 
-                gsap.to(img, {
-                    x: xMove,
-                    y: yMove,
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: 1,
-                    }
+                    let xMove = 0;
+                    let yMove = 0;
+                    const multiplier = isMobile ? 2.5 : 1; // Aggressive spread for mobile
+
+                    if (img.classList.contains('down-image-left-top')) { xMove = -150 * multiplier; yMove = -100 * multiplier; }
+                    else if (img.classList.contains('down-image-left-mid')) { xMove = -200 * multiplier; yMove = 0; }
+                    else if (img.classList.contains('down-image-left-bottom')) { xMove = -150 * multiplier; yMove = 100 * multiplier; }
+                    else if (img.classList.contains('down-image-right-top')) { xMove = 150 * multiplier; yMove = -100 * multiplier; }
+                    else if (img.classList.contains('down-image-right-mid')) { xMove = 200 * multiplier; yMove = 0; }
+                    else if (img.classList.contains('down-image-right-bottom')) { xMove = 150 * multiplier; yMove = 100 * multiplier; }
+                    else if (img.classList.contains('down-image-center-bottom')) { xMove = 0; yMove = 150 * multiplier; }
+
+                    gsap.to(img, {
+                        x: xMove,
+                        y: yMove,
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: "top bottom",
+                            end: "bottom top",
+                            scrub: 1.5, // Slightly smoother spread
+                        }
+                    });
                 });
             });
         }, sectionRef);

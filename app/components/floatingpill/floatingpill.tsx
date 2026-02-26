@@ -2,22 +2,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import './floatingpill.css';
 
-const TRAVEL_PHRASES = [
-    "Matching in Tokyo...",
-    "Finding traveler in Paris...",
-    "Next stop: Bali with Sarah",
-    "Connected in Rome!",
-    "Exploring London together",
-    "Match found in New York!",
-    "Flying to Sydney with Mike",
-    "Adventure awaits in Tulum"
+const TRAVEL_DATA = [
+    { text: "Matching in Tokyo...", emoji: "🗼" },
+    { text: "Finding traveler in Paris...", emoji: "🥐" },
+    { text: "Next stop: Bali with Sarah", emoji: "🏄" },
+    { text: "Connected in Rome!", emoji: "🍝" },
+    { text: "Exploring London together", emoji: "🇬🇧" },
+    { text: "Match found in New York!", emoji: "🗽" },
+    { text: "Flying to Sydney with Mike", emoji: "🐨" },
+    { text: "Adventure awaits in Tulum", emoji: "🥥" }
 ];
 
 export default function FloatingPill() {
     const containerRef = useRef<HTMLDivElement>(null);
     const pillRef = useRef<HTMLDivElement>(null);
-    const [currentText, setCurrentText] = useState(TRAVEL_PHRASES[0]);
-    const phraseIndex = useRef(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         const pill = pillRef.current;
@@ -71,9 +70,8 @@ export default function FloatingPill() {
             }
 
             if (hit) {
-                // Change text ONLY on boundary hit
-                phraseIndex.current = (phraseIndex.current + 1) % TRAVEL_PHRASES.length;
-                setCurrentText(TRAVEL_PHRASES[phraseIndex.current]);
+                // Change index ONLY on boundary hit
+                setCurrentIndex(prev => (prev + 1) % TRAVEL_DATA.length);
 
                 // Clear ongoing scale animation to prevent additive scaling
                 gsap.killTweensOf(pill, "scale");
@@ -104,8 +102,8 @@ export default function FloatingPill() {
                 </div>
 
                 <div ref={pillRef} className="moving-pill">
-                    <span className="pill-icon">✈️</span>
-                    <span className="pill-text">{currentText}</span>
+                    <span className="pill-icon">{TRAVEL_DATA[currentIndex].emoji}</span>
+                    <span className="pill-text">{TRAVEL_DATA[currentIndex].text}</span>
                 </div>
             </div>
         </section>

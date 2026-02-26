@@ -25,13 +25,13 @@ export default function Blur() {
                     Orbee helps you find someone who matches your vibe.
                 </p>
 
-                <div style={{ flex: 1, position: 'relative', marginTop: '1rem', minHeight: '300px' }}>
+                <div className="falling-text-wrapper" style={{ flex: 1, position: 'relative', marginTop: '1rem', minHeight: '350px' }}>
                     <FallingText
                         text="Destinations Match Culture Explore Getaway Spark Dates Romance Vibe Adventures Travel Connection Passions Love"
                         trigger="scroll"
                         backgroundColor="transparent"
                         wireframes={false}
-                        gravity={0.5}
+                        gravity={0.4}
                         mouseConstraintStiffness={0.2}
                     />
                 </div>

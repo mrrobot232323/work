@@ -98,9 +98,10 @@ const FallingText: React.FC<FallingTextProps> = ({
             isStatic: true,
             render: { fillStyle: 'transparent' }
         };
-        const floor = Bodies.rectangle(width / 2, height + 25, width, 50, boundaryOptions);
-        const leftWall = Bodies.rectangle(-25, height / 2, 50, height, boundaryOptions);
-        const rightWall = Bodies.rectangle(width + 25, height / 2, 50, height, boundaryOptions);
+        // Floor should be slightly inside the container to be visible
+        const floor = Bodies.rectangle(width / 2, height - 10, width, 20, boundaryOptions);
+        const leftWall = Bodies.rectangle(5, height / 2, 10, height, boundaryOptions);
+        const rightWall = Bodies.rectangle(width - 5, height / 2, 10, height, boundaryOptions);
         const ceiling = Bodies.rectangle(width / 2, -25, width, 50, boundaryOptions);
 
         const wordSpans = textRef.current.querySelectorAll<HTMLSpanElement>('.word');
@@ -112,14 +113,14 @@ const FallingText: React.FC<FallingTextProps> = ({
 
             const body = Bodies.rectangle(x, y, rect.width, rect.height, {
                 render: { fillStyle: 'transparent' },
-                restitution: 0.8,
-                frictionAir: 0.01,
-                friction: 0.2
+                restitution: 0.5, // Reduced from 0.8 for less chaos
+                frictionAir: 0.02,
+                friction: 0.1
             });
 
             Matter.Body.setVelocity(body, {
-                x: (Math.random() - 0.5) * 5,
-                y: 0
+                x: (Math.random() - 0.5) * 3,
+                y: -Math.random() * 2 // Small initial upward pop
             });
             Matter.Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.05);
             return { elem, body };
