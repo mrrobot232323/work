@@ -13,8 +13,8 @@ export default function Support() {
 
       {/* CONTACT SECTION */}
       <div className="support-contact-section">
-        <a href="mailto:teams@orbies.in" className="support-email-link">
-          teams@orbies.in
+        <a href="mailto:team@orbies.in" className="support-email-link">
+          team@orbies.in
         </a>
       </div>
 
