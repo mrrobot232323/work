@@ -15,52 +15,9 @@ export default function Navbar() {
     useEffect(() => {
         const links = linksRef.current;
         const button = buttonRef.current;
-        const buttonContent = buttonContentRef.current;
         const plasma = plasmaRef.current;
 
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!button || !buttonContent) return;
-            const rect = button.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const distance = Math.hypot(e.clientX - centerX, e.clientY - centerY);
 
-            if (distance < 200) {
-                const x = e.clientX - centerX;
-                const y = e.clientY - centerY;
-
-                gsap.to(button, {
-                    x: x * 0.45,
-                    y: y * 0.45,
-                    rotateX: -y * 0.1,
-                    rotateY: x * 0.1,
-                    duration: 0.5,
-                    ease: "power3.out",
-                });
-
-                gsap.to(buttonContent, {
-                    x: x * 0.12,
-                    y: y * 0.12,
-                    duration: 0.5,
-                    ease: "power3.out",
-                });
-            } else {
-                gsap.to(button, {
-                    x: 0,
-                    y: 0,
-                    rotateX: 0,
-                    rotateY: 0,
-                    duration: 0.8,
-                    ease: "elastic.out(1, 0.4)",
-                });
-                gsap.to(buttonContent, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.8,
-                    ease: "elastic.out(1, 0.4)",
-                });
-            }
-        };
 
         const ctx = gsap.context(() => {
             // Magnetic Effect for Links
@@ -100,12 +57,12 @@ export default function Navbar() {
                 });
             });
 
-            window.addEventListener("mousemove", handleMouseMove);
+
         });
 
         return () => {
             ctx.revert();
-            window.removeEventListener("mousemove", handleMouseMove);
+
         };
     }, []);
 
@@ -130,14 +87,13 @@ export default function Navbar() {
         <nav ref={navRef} className="navbar">
             <Link href="/" className="navbar-logo">
 
-                Orbee
+                Orbies
             </Link>
 
             <div className="navbar-links">
                 {renderLink("Features", "/#features", 0)}
                 {renderLink("Download", "/#download", 1)}
                 {renderLink("About", "/#about", 2)}
-                {renderLink("Blogs", "/blog", 3)}
             </div>
 
             <div className="navbar-actions">

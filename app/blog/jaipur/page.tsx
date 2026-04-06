@@ -22,7 +22,7 @@ export default function JaipurBlogContent() {
                             <div className="author-info">
                                 <div className="author-avatar">O</div>
                                 <div>
-                                    <div className="author-name">Orbee</div>
+                                    <div className="author-name">Orbies</div>
                                     <div className="reading-time">3 min read</div>
                                 </div>
                             </div>
@@ -181,8 +181,8 @@ export default function JaipurBlogContent() {
                 <div className="blogpost-author-block">
                     <div className="author-block-avatar">O</div>
                     <div className="author-block-info">
-                        <h4>Orbee <span>Author</span></h4>
-                        <p>Team Orbee – Building India's first intent-driven travel companion platform focused on real-world connections beyond swipe culture.</p>
+                        <h4>Orbies <span>Author</span></h4>
+                        <p>Team Orbies – Building India's first intent-driven travel companion platform focused on real-world connections beyond swipe culture.</p>
                     </div>
                 </div>
 

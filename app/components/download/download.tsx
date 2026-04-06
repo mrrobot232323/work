@@ -16,7 +16,7 @@ export default function Download() {
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-                        DOWNLOAD ORBEE
+                        DOWNLOAD ORBIES
                     </motion.div>
 
                     <motion.h2
@@ -26,8 +26,8 @@ export default function Download() {
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
-                        Coming soon on Play Store <br />
-                        and Apple App Store
+                        Available on Google Play <br />
+                        Coming soon on App Store
                     </motion.h2>
                 </div>
 
@@ -38,12 +38,15 @@ export default function Download() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                 >
-                    <button className="store-btn">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" />
-                    </button>
-                    <a href="https://play.google.com/apps/testing/com.daksh77.MVP" target="_blank" rel="noopener noreferrer" className="store-btn" style={{ display: 'inline-block' }}>
+                    <a href="https://play.google.com/store/apps/details?id=com.daksh77.MVP" target="_blank" rel="noopener noreferrer" className="store-btn" style={{ display: 'inline-block' }}>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
                     </a>
+                    <div className="store-btn-wrapper">
+                        <button className="store-btn disabled">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" />
+                        </button>
+                        <span className="coming-soon-tag">Coming soon</span>
+                    </div>
                 </motion.div>
             </div>
         </div>

@@ -105,11 +105,11 @@ export default function Down() {
         <div id="about" ref={sectionRef} className="down-section shadow-xl">
             <div ref={containerRef} className="down-content">
                 <h2 className="down-subheading">
-                    <SplitTextLetters text="WHY ORBEE?" />
+                    <SplitTextLetters text="WHY ORBIES?" />
                 </h2>
 
                 <p className="down-text-block">
-                    <SplitTextLetters text="Orbee is a travel based dating" />
+                    <SplitTextLetters text="Orbies is a travel based dating" />
                     <SplitTextLetters text="app where your preferences are" />
                     <SplitTextLetters text="made on dream destinations." />
                 </p>
@@ -127,7 +127,7 @@ export default function Down() {
                 </div>
 
                 <p className="down-text-block">
-                    <SplitTextLetters text="With Orbee, travel meets love." />
+                    <SplitTextLetters text="With Orbies, travel meets love." />
                 </p>
             </div>
 

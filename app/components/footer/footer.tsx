@@ -83,7 +83,7 @@ export default function Footer() {
                 {/* Left Side: Brand CTA */}
                 <div className="footer-brand">
                     <h2 className="footer-headline">Start your next<br /><em>great adventure.</em></h2>
-                    <a href="#download" className="footer-cta">Download Orbee</a>
+                    <a href="#download" className="footer-cta">Download Orbies</a>
                 </div>
 
                 {/* Right Side: Links */}
@@ -97,9 +97,9 @@ export default function Footer() {
 
                     <div className="footer-column">
                         <span className="footer-column-title">Support</span>
-                        {renderLink("Terms of Service", "https://terms.orbee.in/", 3, true)}
-                        {renderLink("Privacy Policy", "https://terms.orbee.in/", 4, true)}
-                        {renderLink("Contact Us", "mailto:orbee.in@gmail.com", 5, true)}
+                        {renderLink("Terms of Service", "/privacy#terms", 3)}
+                        {renderLink("Privacy Policy", "/privacy", 4)}
+                        {renderLink("Contact Us", "mailto:team@orbies.in", 5, true)}
                     </div>
                 </div>
             </div>

@@ -6,17 +6,7 @@ import Navbar from "../components/navbar/page";
 import Footer from "../components/footer/footer";
 import "./blog.css";
 
-const blogPosts = [
-    {
-        id: 1,
-        category: "Solo Travel",
-        title: "Solo Travel in Jaipur (2026 Guide) – Budget, Safety & Finding Travel Companions",
-        excerpt: "Planning a solo trip to Jaipur? Complete 2026 guide covering budget, 3-day itinerary, safety tips, and how to find travel companions in Jaipur.",
-        image: "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000&auto=format&fit=crop",
-        href: "/blog/jaipur"
-    },
-
-];
+const blogPosts: any[] = [];
 
 export default function BlogPage() {
     const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -45,7 +35,7 @@ export default function BlogPage() {
                             Travel Stories & <span>Guides</span>
                         </h1>
                         <p className="blog-subtitle">
-                            Real stories from real travelers. Discover tips, meet companions, and explore the world together with Orbee.
+                            Real stories from real travelers. Discover tips, meet companions, and explore the world together with Orbies.
                         </p>
 
                         <div className="search-container">
@@ -58,38 +48,40 @@ export default function BlogPage() {
 
                     </header>
 
-                    <div className="carousel-section-wrapper">
-                        <button className="carousel-nav-btn left" onClick={() => scroll("left")}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
+                    {blogPosts.length > 0 && (
+                        <div className="carousel-section-wrapper">
+                            <button className="carousel-nav-btn left" onClick={() => scroll("left")}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
 
-                        <section className="carousel-wrapper" ref={scrollRef}>
-                            <div className="carousel-track">
-                                {blogPosts.map((post) => (
-                                    <Link href={post.href || "#"} key={post.id} className="blog-card" style={{ textDecoration: 'none' }}>
-                                        <div className="card-image-wrapper">
-                                            <img src={post.image} alt={post.title} className="card-image" />
-                                        </div>
-                                        <div className="card-content">
-                                            <span className="card-badge">
-                                                {post.category}
-                                            </span>
-                                            <h3 className="card-title" style={{ textDecoration: 'none' }}>{post.title}</h3>
-                                            <p className="card-excerpt">{post.excerpt}</p>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
-                        </section>
+                            <section className="carousel-wrapper" ref={scrollRef}>
+                                <div className="carousel-track">
+                                    {blogPosts.map((post) => (
+                                        <Link href={post.href || "#"} key={post.id} className="blog-card" style={{ textDecoration: 'none' }}>
+                                            <div className="card-image-wrapper">
+                                                <img src={post.image} alt={post.title} className="card-image" />
+                                            </div>
+                                            <div className="card-content">
+                                                <span className="card-badge">
+                                                    {post.category}
+                                                </span>
+                                                <h3 className="card-title" style={{ textDecoration: 'none' }}>{post.title}</h3>
+                                                <p className="card-excerpt">{post.excerpt}</p>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </section>
 
-                        <button className="carousel-nav-btn right" onClick={() => scroll("right")}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                    </div>
+                            <button className="carousel-nav-btn right" onClick={() => scroll("right")}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
 

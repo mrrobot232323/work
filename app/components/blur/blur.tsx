@@ -22,7 +22,7 @@ export default function Blur() {
                 <p className="blur-text">
                     Finding the right partner is about shared passions and experiences.
                     Whether you love mountain hiking, exploring culinary scenes, or backpacking across Europe,
-                    Orbee helps you find someone who matches your vibe.
+                    Orbies helps you find someone who matches your vibe.
                 </p>
 
                 <div style={{ flex: 1, position: 'relative', marginTop: '1rem', minHeight: '300px' }}>

@@ -98,6 +98,32 @@
     }
 }
 
+.store-btn-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.coming-soon-tag {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    color: #a1a1aa;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    font-family: 'Archivo', sans-serif;
+}
+
+.store-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .download-qr {
     display: flex;
     justify-content: center;

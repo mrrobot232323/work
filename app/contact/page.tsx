@@ -46,7 +46,7 @@ export default function ContactPage() {
                                     </div>
                                     <div className="contact-info-text">
                                         <h3>Email</h3>
-                                        <p>orbee.in@gmail.com</p>
+                                        <p>team@orbies.in</p>
                                     </div>
                                 </div>
 
