@@ -1,0 +1,77 @@
+.support-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  font-family: 'Archivo', sans-serif;
+  color: #000;
+  line-height: 1.5;
+}
+
+.support-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.support-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+.support-contact-section {
+  margin-bottom: 4rem;
+}
+
+.support-email-link {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e5e7eb;
+  transition: border-color 0.2s;
+}
+
+.support-email-link:hover {
+  border-color: #4f46e5;
+}
+
+.support-section-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.support-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4rem 0;
+}
+
+.support-list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.support-list-item::before {
+  content: "→";
+  color: #9ca3af;
+}
+
+.support-footer {
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.875rem;
+}

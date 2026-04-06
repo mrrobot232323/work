@@ -1,11 +1,11 @@
 .footer-container {
     width: 100%;
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     border-radius: 40px;
     background-color: #121211; /* Warm dark off-black from the screenshot */
     overflow: hidden;
-    padding: 3rem 2.5rem;
+    padding: 4rem 3rem 6rem;
     font-family: 'Archivo', sans-serif;
     color: #fff;
     display: flex;
@@ -14,7 +14,7 @@
 
 @media (min-width: 1024px) {
     .footer-container {
-        padding: 4rem 5rem;
+        padding: 5rem 6rem 8rem;
     }
 }
 

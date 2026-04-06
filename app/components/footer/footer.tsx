@@ -97,9 +97,9 @@ export default function Footer() {
 
                     <div className="footer-column">
                         <span className="footer-column-title">Support</span>
-                        {renderLink("Terms of Service", "/privacy#terms", 3)}
+                        {renderLink("Terms of Service", "/terms", 3)}
                         {renderLink("Privacy Policy", "/privacy", 4)}
-                        {renderLink("Contact Us", "mailto:team@orbies.in", 5, true)}
+                        {renderLink("Support", "/support", 5)}
                     </div>
                 </div>
             </div>

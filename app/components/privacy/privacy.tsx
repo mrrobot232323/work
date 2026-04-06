@@ -8,7 +8,7 @@ export default function Privacy() {
       {/* HEADER */}
       <header className="privacy-header">
         <h1 className="privacy-title">
-          PRIVACY & POLICY
+          LEGAL DOCUMENTATION
         </h1>
         <p className="privacy-subtitle">
           Orbies.in – by Secreteye Telematics Pvt Ltd • Last Updated: February 24, 2026
@@ -198,6 +198,17 @@ export default function Privacy() {
           </ul>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer className="privacy-footer">
+        <div>
+          <h2 className="footer-brand-name">Orbies.in</h2>
+          <p className="footer-tagline">Authentic social connections. No filters, no fakes, just you.</p>
+        </div>
+        <p className="footer-copyright-text">
+          © 2026 Secreteye Telematics Pvt Ltd. All rights reserved.
+        </p>
+      </footer>
 
     </div>
   );
